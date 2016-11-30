@@ -10,6 +10,9 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /images
+  static_dir: images
+
 - url: /bootstrap
   static_dir: bootstrap
 

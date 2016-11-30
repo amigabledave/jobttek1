@@ -1,5 +1,9 @@
 #Jobttek V1.0 | Copyright 2016 Apothem S.A. de C.V.
 # -*- coding: utf-8 -*-
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 import webapp2, jinja2, os, re, random, string, hashlib, json, logging, math 
 
 from datetime import datetime, timedelta, time
@@ -43,7 +47,7 @@ class Handler(webapp2.RequestHandler):
 			return t.render(**kw)
 
 	def print_html(self, template, **kw):
-		self.write(self.render_html(template, **kw))
+		self.write(self.render_html(template, constants=constants, **kw))
 
 	def set_secure_cookie(self, cookie_name, cookie_value):
 		cookie_secure_value = make_secure_val(cookie_value)

@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-xs-1"></div>
 			<div class="col-xs-9">
-				<div class="SignUp_SummaryTitle" style="padding: 42px 0 24px"> Encuentra candidatos relevantes en minutos con Jobttek </div> 
+				<div class="SignUp_SummaryTitle" style="padding: 42px 0 24px; font-family: 'Arvo', serif;"> Encuentra candidatos relevantes en minutos con Jobttek </div> 
 			</div>						
 		</div>
 	</div>
@@ -19,17 +19,17 @@
 		
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
-					<div class="SignUp_Title"> Registrate! </div> 	
+					<div class="SignUp_Title" style="font-family: 'Arvo', serif; font-size:33px;"> Registra a tu empresa </div> 	
 				</div>				
 			</div>
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
-					<div class="SignUp_SubTitle"> Es seguro y profesional. </div> 	
+					<div class="SignUp_SubTitle"> Es fácil y seguro. </div> 	
 				</div>				
 			</div>
 
-			<div class="form-group">
+<!-- 			<div class="form-group">
 				<div class="col-xs-6" style="padding-right: 4px;">
 					<input type="text" class="form-control SignUp_Input" name="first_name" id="first_name" placeholder="Nombre"  value="{% if input_error %}{{post_details['first_name']}}{% endif %}" required> 					
 				</div>
@@ -37,16 +37,57 @@
 				<div class="col-xs-6" style="padding-left: 4px;">
 					<input type="text" class="form-control SignUp_Input" name="last_name" id="last_name" placeholder="Apellido" value="{% if input_error %}{{post_details['last_name']}}{% endif %}" required>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="form-group">
 				<div class="col-sm-12">
-					<input type="email" class="form-control SignUp_Input" name="email" id="email" placeholder="Email" value="{% if input_error %}{{post_details['email']}}{% endif %}" required>
+					<input type="text" class="form-control SignUp_Input" name="empresa" id="empresa" placeholder="Empresa" value="{% if input_error %}{{post_details['Empresa']}}{% endif %}" required>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="col-sm-12">
+					<select class="form-control SignUp_Input" name="giro_empresa" id="giro_empresa">
+						<option value="" disabled selected>Giro de la empresa</option>
+					{% for value in constants['posibles_giros'] %}
+						<option value="{{value}}"> {{value}} </option>
+					{% endfor %}
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<select class="form-control SignUp_Input" name="rango_empleados" id="rango_empleados">
+						<option value="" disabled selected>Número de empleados</option>
+					{% for value in constants['rangos_empleados'] %}
+						<option value="{{value}}"> {{value}} </option>
+					{% endfor %}
+					</select>
+				</div>
+			</div>
+
+
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="text" class="form-control SignUp_Input" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre del contacto" value="{% if input_error %}{{post_details['Empresa']}}{% endif %}" required>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="number" class="form-control SignUp_Input" name="telefono" id="telefono" placeholder="Número telefónico" value="{% if input_error %}{{post_details['telefono']}}{% endif %}" required>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-6">
+					<input type="email" class="form-control SignUp_Input" name="email" id="email" placeholder="Email" value="{% if input_error %}{{post_details['email']}}{% endif %}" required>
+				</div>
+				<div class="col-sm-6">
 					<input type="email" class="form-control SignUp_Input" name="confirm_email" id="confirm_email" placeholder="Confirmar email" value="{% if input_error %}{{post_details['confirm_email']}}{% endif %}" required>
 				</div>
 			</div>
@@ -59,7 +100,7 @@
 
 			<div class="form-group">
 				<div class="col-xs-12">
-					<button type="button" class="btn btn-lg btn-success" name="action_description"  value="SignUp" id="SignUpButton">   Crear mí cuenta   </button>	
+					<button type="button" class="btn btn-lg btn-success" name="action_description"  value="SignUp" id="SignUpButton">   Continuar   </button>	
 				</div>
 			</div>
 		</form>
