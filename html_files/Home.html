@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>	
+<div class="row"> 	
+
+	<div class="col-xs-hidden col-sm-4 col-md-6 col-lg-8"> 
+		<div class="row">
+			<div class="col-xs-1"></div>
+			<div class="col-xs-9">
+				<div class="SignUp_SummaryTitle" style="padding: 42px 0 24px"> Encuentra candidatos relevantes en minutos con Jobttek </div> 
+			</div>						
+		</div>
+	</div>
+
+
+	<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">  
+		<form class="form-horizontal" method="post">
+		
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+					<div class="SignUp_Title"> Registrate! </div> 	
+				</div>				
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+					<div class="SignUp_SubTitle"> Es seguro y profesional. </div> 	
+				</div>				
+			</div>
+
+			<div class="form-group">
+				<div class="col-xs-6" style="padding-right: 4px;">
+					<input type="text" class="form-control SignUp_Input" name="first_name" id="first_name" placeholder="Nombre"  value="{% if input_error %}{{post_details['first_name']}}{% endif %}" required> 					
+				</div>
+
+				<div class="col-xs-6" style="padding-left: 4px;">
+					<input type="text" class="form-control SignUp_Input" name="last_name" id="last_name" placeholder="Apellido" value="{% if input_error %}{{post_details['last_name']}}{% endif %}" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="email" class="form-control SignUp_Input" name="email" id="email" placeholder="Email" value="{% if input_error %}{{post_details['email']}}{% endif %}" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="email" class="form-control SignUp_Input" name="confirm_email" id="confirm_email" placeholder="Confirmar email" value="{% if input_error %}{{post_details['confirm_email']}}{% endif %}" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="text" class="form-control SignUp_Input" name="password" id="password" placeholder="Contraseña" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-xs-12">
+					<button type="button" class="btn btn-lg btn-success" name="action_description"  value="SignUp" id="SignUpButton">   Crear mí cuenta   </button>	
+				</div>
+			</div>
+		</form>
+
+		<!-- Random button to be hidden in production -->
+<!-- 		<form class="form-horizontal" method="post"> 
+			<div class="form-group">
+				<div class="col-xs-12">
+					<button type="submit" class="btn btn-sm btn-success respect-space" name="action_description" value="Random_SignUp">     Random     </button>
+				</div>
+			</div>
+		</form> -->
+		<!-- Random button to be hidden in production -->
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="SignUp_Error" id="input_error"></div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>	
+
+
+{% endblock %}
